@@ -34,10 +34,13 @@ void write_handler(const boost::system::error_code &ec,
 		auto sizeRead = inStream.gcount();
 		if (sizeRead > 0)
 			tcp_socket.async_write_some(buffer(bytes, sizeRead), write_handler);
+        else
+            inStream.close();
 	}
 	else
 	{
 		std::cout << "no more data to read\n" << std::endl;
+        inStream.close();
 	}
 }
 

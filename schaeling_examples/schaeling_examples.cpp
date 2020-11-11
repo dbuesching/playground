@@ -106,7 +106,7 @@ void read_handler(const boost::system::error_code &ec,
 	}
 	else
 	{
-		std::cout << "no more data to read\n" << std::endl;
+        std::cout << "no more data to read !!\n" << std::endl;
 	}
 }
 
